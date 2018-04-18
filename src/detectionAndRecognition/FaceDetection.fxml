@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.CheckBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="detectionAndRecognition.FaceDetectionAndRecognition">
+   <children>
+      <HBox prefHeight="433.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="427.0" prefWidth="334.0">
+               <children>
+                  <VBox prefHeight="189.0" prefWidth="0.0">
+                     <children>
+                        <Label text="Classifier">
+                           <VBox.margin>
+                              <Insets left="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <CheckBox fx:id="haarClassifier" mnemonicParsing="false" onAction="#haarSelected" text="Haar">
+                           <VBox.margin>
+                              <Insets left="25.0" top="10.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="lbpClassifier" mnemonicParsing="false" onAction="#lbpSelected" text="LBP">
+                           <VBox.margin>
+                              <Insets left="25.0" top="15.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="252.0" prefWidth="251.0">
+                     <children>
+                        <Label text="Recognizer">
+                           <VBox.margin>
+                              <Insets left="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <CheckBox fx:id="EIGEN" disable="true" mnemonicParsing="false" onAction="#eigenSelected" text="Eigen">
+                           <VBox.margin>
+                              <Insets left="25.0" top="10.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="FISHER" disable="true" mnemonicParsing="false" onAction="#fisherSelected" text="Fisher">
+                           <VBox.margin>
+                              <Insets left="25.0" top="15.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="LBPH" disable="true" mnemonicParsing="false" onAction="#lbphSelected" text="LBPH">
+                           <VBox.margin>
+                              <Insets left="25.0" top="15.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <Button fx:id="trainModel" mnemonicParsing="false" onAction="#trainTheModel" text="Train Model">
+                           <VBox.margin>
+                              <Insets left="25.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label fx:id="modelTrained" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="25.0" top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Consolas Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="427.0" prefWidth="497.0">
+               <children>
+                  <ImageView fx:id="originalFrame" fitHeight="352.0" fitWidth="549.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></ImageView>
+                  <Button fx:id="cameraButton" disable="true" onAction="#startCamera" text="Start Camera">
+                     <VBox.margin>
+                        <Insets left="220.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>
